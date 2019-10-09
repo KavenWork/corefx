@@ -3,6 +3,8 @@
   <Import Project="Directory.Build.props" />
 
   <PropertyGroup>
+    <BuildManaged Condition="'$(ArchGroup)' == 'wasm'">false</BuildManaged>
+    <BuildPackages Condition="'$(ArchGroup)' == 'wasm'">false</BuildPackages>
     <BuildNative Condition="'$(BuildNative)' == '' and '$(DirectoryToBuild)' == ''">true</BuildNative>
     <BuildManaged Condition="'$(BuildManaged)' == ''">true</BuildManaged>
     <BuildPackages Condition="'$(BuildPackages)' == '' and '$(DirectoryToBuild)' == ''">true</BuildPackages>
