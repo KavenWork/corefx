@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <!-- Build for all configurations -->
-  <ItemGroup>
+  <ItemGroup Condition="'$(ArchGroup)' != 'wasm'">
     <Project Condition="'$(BuildAllConfigurations)' == 'true'" Include="netcoreapp/netcoreapp.depproj" />
     <Project Condition="'$(BuildAllConfigurations)' == 'true'" Include="uap/uap.depproj" />
     <Project Include="netstandard/netstandard.depproj" />
