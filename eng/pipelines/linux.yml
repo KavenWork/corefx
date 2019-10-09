@@ -63,7 +63,7 @@ stages:
                 _architecture: x64
                 _framework: netcoreapp
                 _helixQueues: $(linuxDefaultQueues)
-                _dockerContainer: rhel7_container
+                _dockerContainer: ubuntu_1604
                 _buildScriptPrefix: ''
                 _buildExtraArguments: ''
                 _publishTests: true
