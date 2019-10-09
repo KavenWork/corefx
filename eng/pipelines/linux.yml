@@ -58,7 +58,7 @@ stages:
                 _buildExtraArguments: /p:RuntimeOS=linux-musl
 
             ${{ if eq(parameters.fullMatrix, 'true') }}:
-              x64_Release:
+              wasm_Release:
                 _BuildConfig: Release
                 _architecture: wasm
                 _framework: netcoreapp
