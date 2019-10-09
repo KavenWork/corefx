@@ -260,6 +260,9 @@ while :; do
         arm64|-arm64)
             __BuildArch=arm64
             ;;
+        wasm|-wasm)
+            __BuildArch=wasm
+            ;;
         debug|-debug)
             __BuildType=Debug
             ;;
@@ -400,7 +403,7 @@ case $CPUName in
         fi
         ;;
     x86_64)
-        if [ $__BuildArch != x64 ]; then
+        if [ $__BuildArch != x64 -a $__BuildArch !=  wasm ]; then
             __CrossBuild=1
             echo "Set CrossBuild for $__BuildArch build"
         fi

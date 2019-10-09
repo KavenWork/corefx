@@ -60,7 +60,7 @@ stages:
             ${{ if eq(parameters.fullMatrix, 'true') }}:
               x64_Release:
                 _BuildConfig: Release
-                _architecture: x64
+                _architecture: wasm
                 _framework: netcoreapp
                 _helixQueues: $(linuxDefaultQueues)
                 _dockerContainer: ubuntu_1604
