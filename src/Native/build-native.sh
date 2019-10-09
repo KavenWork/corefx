@@ -157,6 +157,10 @@ build_native()
 
     echo "Executing make install -j $__NumProc $__MakeExtraArgs"
 
+    if [ "$__BuildArch" == "wasm" ]; then
+        source $BUILD_BINARIESDIRECTORY/emsdk/emsdk_env.sh
+    fi
+
     make install -j $__NumProc $__MakeExtraArgs
     if [ $? != 0 ]; then
         echo "Failed to build corefx native components."
