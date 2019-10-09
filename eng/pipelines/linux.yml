@@ -66,7 +66,8 @@ stages:
                 _dockerContainer: ubuntu_1604
                 _buildScriptPrefix: ''
                 _buildExtraArguments: ''
-                _publishTests: true
+                _publishTests: false
+                _buildExtraArguments: -warnAsError false
 
             #   musl_x64_Release:
             #     _BuildConfig: Release
