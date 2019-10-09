@@ -65,7 +65,6 @@ stages:
                 _helixQueues: $(linuxDefaultQueues)
                 _dockerContainer: ubuntu_1604
                 _buildScriptPrefix: ''
-                _buildExtraArguments: ''
                 _publishTests: false
                 _buildExtraArguments: -warnAsError false
 
