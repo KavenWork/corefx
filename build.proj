@@ -55,7 +55,8 @@
 
     <MSBuild Projects="@(_TestProjects)"
              Targets="Build"
-             Properties="$(ProjectProperties)" />
+             Properties="$(ProjectProperties)"
+             Condition="'$(ArchGroup)' != 'wasm'" />
   </Target>
 
   <Target Name="Test">
