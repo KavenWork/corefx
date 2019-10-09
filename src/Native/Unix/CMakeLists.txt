@@ -25,15 +25,19 @@ if(CMAKE_C_COMPILER_ID STREQUAL Clang)
     add_compile_options(-Wthread-safety)
     add_compile_options(-Wno-thread-safety-analysis)
 endif()
+add_compile_options(-Werror)
 
 if(CMAKE_SYSTEM_NAME STREQUAL Emscripten)
     # Build a static library so no -fPIC
-    # The emscripten build has additional warnings so -Werror breaks
     set(CLR_CMAKE_PLATFORM_WASM 1)
     add_definitions(-D_WASM_)
+    # The emscripten build has additional warnings so -Werror breaks
+	add_compile_options(-Wno-unused-parameter)
+    add_compile_options(-Wno-unused-function)
+	add_compile_options(-Wno-alloca)
+    add_compile_options(-Wno-implicit-int-float-conversion)
 else()
   add_compile_options(-fPIC)
-  add_compile_options(-Werror)
 endif(CMAKE_SYSTEM_NAME STREQUAL Emscripten)
 
 if (CMAKE_SYSTEM_PROCESSOR STREQUAL x86_64 OR CMAKE_SYSTEM_PROCESSOR STREQUAL amd64)
